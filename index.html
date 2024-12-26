@@ -7,11 +7,13 @@
 
   <h1 class="hoge">アフィリンク</h1>
 
+  <!-- hogeクラスを持つ要がクリックされたときに、指定のURLにリダイレクトするスクリプト -->
   <script>
     document.addEventListener('click', function (event) {
       const clickedElement = event.target;
       if (clickedElement.classList.contains('hoge')) {
-        window.location.href = "https://cl.link-ag.net/click/97e003/ec522948";
+        const redirectUrl = "https://cl.link-ag.net/click/97e003/ec522948";
+        window.location.href = redirectUrl;
       }
     });
   </script>

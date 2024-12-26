@@ -5,16 +5,24 @@
 <body>
   <h1>Hello World</h1>
 
-  <h1 class="hoge">アフィリンク</h1>
+  <h1 class="hoge">アフィリンク1</h1>
 
-  <!-- hogeクラスを持つ要がクリックされたときに、指定のURLにリダイレクトするスクリプト -->
+  <h1 class="fuga">アフィリンク2</h1>
+
+  <!-- 指定のクラスを持つ要素がクリックされたときに、それぞれ指定のURLにリダイレクトさせるスクリプト -->
   <script>
+    const urlMapping = {
+      hoge: "https://cl.link-ag.net/click/97e003/ec522948",
+      fuga: "https://cl.link-ag.net/click/97e003/4fe0ab78"
+    };
     document.addEventListener('click', function (event) {
       const clickedElement = event.target;
-      if (clickedElement.classList.contains('hoge')) {
-        const redirectUrl = "https://cl.link-ag.net/click/97e003/ec522948";
-        window.location.href = redirectUrl;
-      }
+      Object.keys(urlMapping).forEach(className => {
+        if (clickedElement.classList.contains(className)) {
+          const redirectUrl = urlMapping[className];
+          window.location.href = redirectUrl;
+        }
+      });
     });
   </script>
 </body>

@@ -16,11 +16,11 @@
   <h2 id="h2-2" style="margin-bottom: 2000px;">見出し2</h2>
 
   <p>
-    <a href="https://okumatemplatehtml.netlify.app/#h1-1" class="scroll-link">見出し1へのリンク</a>
+    <a href="#h2-1" class="scroll-link">見出し1へのリンク</a>
   </p>
 
   <p>
-    <a href="https://okumatemplatehtml.netlify.app/#h1-2" class="scroll-link">見出し2へのリンク</a>
+    <a href="#h2-2" class="scroll-link">見出し2へのリンク</a>
   </p>
 
   <!-- 指定のクラスを持つ要素がクリックされたときに、それぞれ指定のURLにリダイレクトさせるスクリプト -->
@@ -46,8 +46,7 @@
       const clickedElement = event.target;
       if (clickedElement.classList.contains('scroll-link')) {
         const href = clickedElement.getAttribute('href');
-        const url = new URL(href);
-        const targetId = url.hash.substring(1);
+        const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });

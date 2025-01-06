@@ -16,11 +16,11 @@
   <h2 id="h2-2">見出し2</h2>
 
   <h2>
-    <a href="link-1" target="_blank">アフィリンク1</a>
+    <a href="link-1" class="redirect-link" target="_blank">アフィリンク1</a>
   </h2>
 
   <h2 style="margin-bottom: 2000px;">
-    <a href="link-2" target="_blank">アフィリンク2</a>
+    <a href="link-2" class="redirect-link" target="_blank">アフィリンク2</a>
   </h2>
 
   <p>
@@ -60,7 +60,7 @@
         const href = clickedElement.getAttribute('href');
         const redirectUrl = redirectMapping[href];
         if (redirectUrl) {
-          window.location.href = redirectUrl;
+          window.open(redirectUrl, '_blank');
           event.preventDefault();
         }
       }
